@@ -1,11 +1,12 @@
 <script setup lang="ts">
-    const prop = defineProps<{
-        inputValue?: number,
-        inputObject?: Object
-    }>()
+    import {type Percentage} from '../Form';
+
+    const prop = defineProps<{component: Percentage}>()
+
 </script>
 <template>
-    {{inputValue}}
+    <label>{{ component.label }}</label>
+    <input v-model="component.value">
 </template>
 <style scoped>
 

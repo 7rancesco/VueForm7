@@ -1,11 +1,12 @@
 <script setup lang="ts">
-    const prop = defineProps<{
-        inputValue?: string,
-        inputObject?: Object
-    }>()
+    import {type CodiceFiscale} from '../Form';
+
+    const prop = defineProps<{component: CodiceFiscale}>()
+
 </script>
 <template>
-    {{inputValue}}
+    <label>{{ component.label }}</label>
+    <input v-model="component.value">
 </template>
 <style scoped>
 

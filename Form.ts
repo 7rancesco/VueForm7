@@ -43,18 +43,20 @@ interface ObjectInput {
 interface Collection extends ObjectInput
 {
     component: 'collection',
-    components: {[key : string] : FormComponent }
+    components: {[key : string] : FormComponent },
+    value: {[key : string] : FormComponent }[]
 }
 
 interface StepForm extends ObjectInput
 {
     component: 'step_form',
-    components: {[key : string] : FormComponent }[]
+    components: {[key : string] : FormComponent }[],
+    value: string
 }
 
 
 
-type FormComponent = null       |
+type FormComponent =
     Name                        | 
     CodiceFiscale               |
     Percentage                  |
@@ -62,6 +64,13 @@ type FormComponent = null       |
     StepForm
 ;
 
-const FormComponents =  ref<{[key : number] : {[key : string] : FormComponent }[] }>()
+const FormComponents =  ref<{[key : number] : {[key : string] : FormComponent } }>({})
 
-export default FormComponents
+export {
+    FormComponents,
+    type Name,
+    type CodiceFiscale,
+    type Percentage,
+    type Collection,
+    type StepForm,
+}

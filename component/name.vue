@@ -1,13 +1,12 @@
 <script setup lang="ts">
-    import { ref } from 'vue';
-    const prop = defineProps<{
-        inputValue?: string,
-        inputObject?: Object
-    }>()
-    const val = ref(prop.inputValue);
+    import {type Name} from '../Form';
+
+    const prop = defineProps<{component: Name}>()
+
 </script>
 <template>
-    <input v-model="val" />
+    <label>{{ component.label }}</label>
+    <input v-model="component.value">
 </template>
 <style scoped>
 
