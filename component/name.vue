@@ -5,8 +5,10 @@
 
 </script>
 <template>
-    <label>{{ component.label }}</label>
-    <input v-model="component.value">
+    <div v-if="!component.hidden">
+        <label>{{ component.label }}</label>
+        <input v-model="component.value" @keyup="component.onKeyup">
+    </div>
 </template>
 <style scoped>
 

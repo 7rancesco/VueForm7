@@ -6,6 +6,8 @@ import { ref } from "vue"
     interface StringInput {
         label: string,
         value: string,
+        onKeyup?: Function,
+        hidden?: boolean
     }
 
     interface Name extends StringInput
@@ -24,7 +26,9 @@ import { ref } from "vue"
 
     interface NumberInput {
         label: string,
-        value: number
+        value: number,
+        onKeyup?: Function,
+        hidden?: boolean
     }
 
     interface Percentage extends NumberInput
@@ -38,6 +42,7 @@ import { ref } from "vue"
 
 interface ObjectInput {
     label: string,
+    hidden?: boolean
 }
 
 interface Collection extends ObjectInput
@@ -51,7 +56,7 @@ interface StepForm extends ObjectInput
 {
     component: 'step_form',
     components: {[key : string] : FormComponent }[],
-    value: string
+    value: number
 }
 
 
