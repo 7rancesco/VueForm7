@@ -9,7 +9,6 @@
 </script>
 
 <template>
-    <h1>VForm</h1>
     <FormBuilder :id="id"/>
 </template>
 

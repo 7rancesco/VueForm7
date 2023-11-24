@@ -46,13 +46,20 @@ interface Collection extends ObjectInput
     components: {[key : string] : FormComponent }
 }
 
+interface StepForm extends ObjectInput
+{
+    component: 'step_form',
+    components: {[key : string] : FormComponent }[]
+}
+
 
 
 type FormComponent = null       |
     Name                        | 
     CodiceFiscale               |
     Percentage                  |
-    Collection
+    Collection                  |
+    StepForm
 ;
 
 const FormComponents =  ref<{[key : number] : {[key : string] : FormComponent }[] }>()
